@@ -1,0 +1,51 @@
+<div class="home-container w-full h-screen  bg-cover bg-center bg-no-repeat " style="background-image: url('https://static.vecteezy.com/system/resources/thumbnails/026/859/549/small_2x/of-fitness-equipment-and-personal-grooming-tools-on-a-clean-background-with-copy-space-free-photo.jpg');" >
+  <div class="flex justify-center items-center">
+    <h1 class="font-bold text-6xl text-gray-300 ">Workout tracker</h1>
+  </div>
+  <div class="flex justify-center items-center m-[100px]">
+    <div class="mx-4 p-4 bg-gray-400 bg-opacity-10 border-2 border-white shadow-2xl flex justify-center items-center w-[400px] rounded-xl"> 
+      <label for="name" class="bg-white-500 m-4 text-white font-semibold text-xl">Username:</label>
+      <input 
+        id="name" 
+        placeholder="Krishna" 
+        [(ngModel)]="username" 
+        class="p-2 m-4 rounded-lg" 
+        (input)="Name($event, 'username')">
+    </div>
+    <div class="mx-4 p-4 bg-gray-400 bg-opacity-10 border-2 border-white shadow-2xl flex justify-center items-center w-[400px] rounded-xl"> 
+      <label for="type" type="dropdown" class="bg-white-500 p-2 text-white font-semibold text-xl">Workout type:</label>
+      <select 
+        id="options"
+        
+        name="options" 
+        [(ngModel)]="workoutType"
+         
+        class="p-2 m-4 rounded-lg" 
+        (change)="Select($event)">
+        <option value="Cycling">Cycling</option>
+        <option value="Running">Running</option>
+        <option value="Jumping">Jumping</option>
+        <option value="Pushups">Pushups</option>
+        <option value="Swimming">Swimming</option>
+      </select>
+    </div>
+    <div class="mx-3 p-4 bg-gray-400 bg-opacity-10 border-2 border-white shadow-2xl flex justify-center items-center w-[400px] rounded-xl"> 
+      <label for="minutes" class="bg-white-500 p-2 text-white font-semibold text-xl">Workout minutes:</label>
+      <input 
+        id="minutes" 
+        placeholder="60min" 
+        [(ngModel)]="workoutMinutes" 
+        class="p-2 m-4 rounded-lg" 
+        (input)="Min($event, 'workoutMinutes')">
+    </div>
+  </div>
+  <div class="m-2 flex justify-center gap-20 item-center">
+  <button 
+    class="rounded-2xl p-4 border-2 border-blue-500 hover:border-blue-800 hover:bg-blue-700 hover:text-white font-semibold shadow-2xl"
+    (click)="addWorkout()">
+    Add Workout
+  </button>
+  
+  <button (click)="navtoView()" class="rounded-2xl  p-4 border-2 border-blue-500 hover:border-blue-800 hover:bg-blue-700 hover:text-white font-semibold shadow-2xl ">View Workouts</button>
+  </div>
+</div>

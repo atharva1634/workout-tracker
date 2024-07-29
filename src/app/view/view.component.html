@@ -1,0 +1,45 @@
+<div class="object-cover w-full h-screen  bg-cover bg-center bg-no-repeat " style="background-image: url('https://static.vecteezy.com/system/resources/thumbnails/026/859/549/small_2x/of-fitness-equipment-and-personal-grooming-tools-on-a-clean-background-with-copy-space-free-photo.jpg'); ">
+  <h2 class="text-4xl font-bold mb-1 text-gray-300 ">Workout List</h2>
+<div class = "search-filter-container  flex item-center justify-center gap-20">
+   <div class="mb-4 w-[300px] ">
+    
+    <input
+      type="text"
+      placeholder="Search by Username"
+      [(ngModel)]="searchQuery"
+      (input)="searchWorkouts()"
+      class="p-2 border rounded-lg w-full"
+    />
+  </div>
+    <select [(ngModel)]="searchType" (change)="searchWorkouts()" class=" rounded-lg border border-gray-300  mb-4 w-[300px] " >
+      <option value="">All Workout Types</option>
+      <option value="Cycling">Cycling</option>
+      <option value="Running">Running</option>
+      <option value="Jumping">Jumping</option>
+      <option value="Pushups">Pushups</option>
+      <option value="Swimming">Swimming</option>
+    </select>
+    </div>
+
+  <table class="table-auto border-separate  w-full mr-4  ">
+    <thead >
+      <tr >
+        <th class="px-4 py-2">Username</th>
+        <th class="px-4 py-2">Workout Type</th>
+        <th class="px-4 py-2">Workout Minutes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let workout of filteredWorkout">
+        <td class="border-2 rounded-lg bg-gray-300 bg-opacity-10 text-white font-semibold px-4 py-2">{{ workout.username }}</td>
+        <td class="border-2 rounded-lg bg-gray-300 bg-opacity-10 px-4 py-2 text-white font-semibold">{{ workout.workoutType }}</td>
+        <td class="border-2 rounded-lg bg-gray-300 bg-opacity-10 px-4 py-2 text-white font-semibold">{{ workout.workoutMinutes }}</td>
+        <button (click)="deleteWorkout(workout.username, workout.workoutType)" class="rounded-2xl  p-4 border-2 border-blue-500 hover:border-blue-800 hover:bg-red-600 hover:text-white font-semibold m-4">Delete</button>
+<button (click)="navtoStats(workout.username)" class="rounded-2xl  p-4 border-2 border-blue-500 hover:border-blue-600 hover:bg-blue-700 hover:text-white font-semibold m-4 ">View Stats</button>
+      </tr>
+    </tbody>
+    
+  </table>
+  <button (click)="navtoHome()" class="rounded-2xl text-xl p-4 border-2 border-blue-500 hover:border-blue-600 hover:bg-blue-700 hover:text-white font-semibold m-4">Back</button>
+
+</div>
