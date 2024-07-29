@@ -19,9 +19,9 @@ This is a workout tracking single-page application (SPA) built with Angular. Use
    git clone https://github.com/yourusername/workout-tracker.git
 2. **Navigate to the Project Directory**
 
--cd workout-tracker
--npm install
--ng serve
+-**cd workout-tracker**
+-**npm install**
+-**ng serve**
 
 **Access the Application**
 Open your browser and go to http://localhost:4200.
