@@ -25,8 +25,6 @@ This is a workout tracking single-page application (SPA) built with Angular. Use
 
 **Access the Application**
 Open your browser and go to http://localhost:4200.
-    
-# Workout Tracker App
 
 ## Usage
 
